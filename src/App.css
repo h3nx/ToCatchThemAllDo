@@ -1,7 +1,20 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height:100%;
+  width:100%;
 }
 
+.title {
+  font-size:50px;
+}
+
+
+
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +49,38 @@
     transform: rotate(360deg);
   }
 }
+*/
+
+
+
+
+
+/* Flex shortcuts */
+
+.f { display: flex; }
+.r { flex-direction: row; }
+.c { flex-direction: column; }
+
+/* vertical alignment */
+.v { align-items: center; }
+.vs { align-items: flex-start; }
+.ve { align-items: flex-end; }
+
+/* horizontal alignment */
+.h { justify-content: center; }
+.hs { justify-content: flex-start; }
+.he { justify-content: flex-end; }
+
+/* wraps */
+.w { flex-wrap: wrap; }
+.wr { flex-wrap: wrap-reverse; }
+
+.sa { justify-content: space-around; }
+.sb { justify-content: space-between; }
+.se { justify-content: space-evenly; }
+
+.fdr {flex-direction: row;}
+.fdrr {flex-direction: row-reverse;}
+.fdc {flex-direction: column;}
+.fdcr {flex-direction: row-reverse;}
+

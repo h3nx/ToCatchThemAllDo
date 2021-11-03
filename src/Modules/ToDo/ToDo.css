@@ -1,0 +1,65 @@
+
+
+.item {
+    /* background:green; */
+    /* color:white; */
+    width: 70vw;
+    max-width: 600px;
+    min-width: 200px;
+    max-height:50px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+
+
+.list {
+    /* background:black; */
+    max-width: 800px;
+    
+}
+
+
+
+
+.iconButton {
+    border:0;
+    margin:5px;
+    padding:0;
+    background:0;
+    cursor:pointer;
+    font-size: 20px;
+}
+
+.Unfinished {
+    opacity: 1;
+}
+.Finished {
+    opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo-spin{
+      animation: logo-spin-animation infinite 10s linear;
+    }
+}
+@keyframes logo-spin-animation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+

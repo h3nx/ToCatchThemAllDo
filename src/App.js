@@ -1,10 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import {ToDo} from "./Modules/ToDo/ToDo"
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+        <div className="title">
+          To <sub>Catch them all</sub> Do
+        </div>
+      
+      
+        <ToDo/>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+/*
+
+
+<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -18,8 +37,5 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
-  );
-}
-
-export default App;
+      
+      */
