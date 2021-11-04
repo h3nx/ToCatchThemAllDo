@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {ToDo} from "./Modules/ToDo/ToDo"
+import {ToCatchThemAllDo} from "./Modules/ToCatchThemAllDo/List"
 
 
 function App() {
@@ -9,9 +9,7 @@ function App() {
         <div className="title">
           To <sub>Catch them all</sub> Do
         </div>
-      
-      
-        <ToDo/>
+        <ToCatchThemAllDo/>
     </div>
   );
 }

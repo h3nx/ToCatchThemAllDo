@@ -1,49 +1,30 @@
 import { useState, useEffect } from "react"; 
 import {Item, ItemData, ItemState} from "./Item";
 import {InputForm} from "./InputForm";
-import data from "./temp.json"
+
 //Styles
-import "./ToDo.css"
+import "./ToCatchThemAllDo.css"
 
 
-function ToDo() {
+function ToCatchThemAllDo() {
     
-    const [listData, setListData] = useState([
-        // new ItemData("Bulba","Grass"),
-        // new ItemData("Charmander","Fire"),
-        // new ItemData("Squirtle","Water")
-    ]);
-    
-    
-    // useEffect(() => {
-    //     fetch( "https://pokeapi.co/api/v2/generation/1", { method: 'GET', headers: {  'Content-Type': 'application/json', }} )
-    //     .then(result => result.json())
-    //     .then(
-    //         (result) => {
-    //             console.log(result);
-                
-    //         },
-    //         (error) => {
-                
-    //             console.log("potato",error);
-    //             // setIsLoaded(true);
-    //             // setError(error);
-    //         }
-    //     )
-    // }, []);
-    
+    const [listData, setListData] = useState([]);
+    const [inputError, setError] = useState(false); 
     function addItem(input) {
         
         fetchData("https://pokeapi.co/api/v2/pokemon/" + input, (result) => {
             console.log(result);            
-            var item = new ItemData(input); 
+            var item = new ItemData(result.name); 
             item.sprite = result.sprites.front_default;
             setListData([...listData, item]);
+            setError(false)
             // fetchTypeSprite(item.id,result.types);
+        }, (error) => {
+            setError(true);
         })
         
     }
-    function fetchData(url, func) {
+    function fetchData(url, func, onError) {
         fetch(url,{ method: 'GET', headers: {  'Content-Type': 'application/json', }})
         .then((result)=> {
             if(result.ok) {
@@ -56,7 +37,7 @@ function ToDo() {
         .then((result) => {
             func(result);
         })
-        .catch((error) => {});
+        .catch((error) => {onError()});
     }
     
     function fetchTypeSprite(id, urls) {
@@ -66,6 +47,8 @@ function ToDo() {
             // fetchData(url, (result) => {
             
             // })
+        },(error) => {
+            
         })
         
     }
@@ -89,17 +72,21 @@ function ToDo() {
         setListData(listData.map((item) => (item.id === id) ? {...item, editing:true} : item));
     }
     function setItemCancelEditing(id) {
-        setListData(listData.map((item) => (item.id === id) ? {...item, editing:false} : item));
+        setListData(listData.map((item) => (item.id === id) ? {...item, editing:false, error:false} : item));
         
     }
     function finishEditing(id, name) {
         fetchData("https://pokeapi.co/api/v2/pokemon/" + name, (result) => {
             console.log(result);            
-            setListData(listData.map((item) => (item.id === id) ? {...item, name:name, sprite:result.sprites.front_default, editing:false} : item ));
+            setListData(listData.map((item) => (item.id === id) ? {...item, name:result.name, sprite:result.sprites.front_default, editing:false} : item ));
+            
+        },(error)=> {
+            setListData(listData.map((item) => (item.id === id) ? {...item, error:true} : item ));
+            
         })
     }
     console.log(listData)
-    return( <div className="f c list">
+    return( <div className="f c v list">
         {
             listData.map((item) => {
                 return (
@@ -118,14 +105,16 @@ function ToDo() {
         
         <InputForm
             onSubmit={(value)=>{addItem(value)}}
-            style={{paddingBottom:"50px"}}
+            style={{marginBottom:"50px", width:"200px"}}
+            placeHolder="pokemon name or id"
+            error={inputError}
         />
         
                 
     </div>);
 }
 
-export {ToDo};
+export {ToCatchThemAllDo};
 
 
 
