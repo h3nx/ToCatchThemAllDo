@@ -12,6 +12,7 @@ function ToCatchThemAllDo() {
     
     
     // API USAGE
+    
     function fetchData(url, func, onError) {
         // using fetch method to fetch data from API using supplied URL
         fetch(url,{ method: 'GET', headers: {  'Content-Type': 'application/json', }})
