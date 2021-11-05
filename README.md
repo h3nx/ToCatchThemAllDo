@@ -3,11 +3,17 @@
 Todo list for catching pokemons.
 Using the [Poke Api](https://pokeapi.co/) to add sprites to the tasks. The API also enables the user to add pokemon by ID.
 
-Project made in [react](https://reactjs.org/), using icons from [Font Awesome](https://fontawesome.com/). Using [Node-uuid](https://www.npmjs.com/package/uuid) for task ID's. Using [DOMPurify](https://www.npmjs.com/package/dompurify) to cleanse user input.
+Project made in [React](https://reactjs.org/).
+Using icons from [Font Awesome](https://fontawesome.com/). 
+Using [Node-uuid](https://www.npmjs.com/package/uuid) for task ID's. 
+Using [DOMPurify](https://www.npmjs.com/package/dompurify) to cleanse user input.
 
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+For first time setup run `npm install`.
+
 ## Available Scripts
 
 In the project directory, you can run:
