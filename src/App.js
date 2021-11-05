@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
         <div className="title">
-          To <sub>Catch them all</sub> Do
+          To <sub style={{color:"gray", fontSize:"30px"}}>Catch them all</sub> Do
         </div>
         <ToCatchThemAllDo/>
     </div>

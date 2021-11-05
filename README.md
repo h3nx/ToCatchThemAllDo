@@ -1,5 +1,7 @@
 # To Catch Then All Do
 
+Todo list for catching pokemons.
+Using the [Poke Api](https://pokeapi.co/) to add a sprite to the task, aswell as supplying a name when adding by ID
 
 
 
