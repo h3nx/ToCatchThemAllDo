@@ -1,4 +1,4 @@
-# To Catch Then All Do
+# To Catch Them All Do
 
 Todo list for catching pokémons.
 Using the [Poké Api](https://pokeapi.co/) to add sprites to the tasks. The API also enables the user to add pokémon by ID.
