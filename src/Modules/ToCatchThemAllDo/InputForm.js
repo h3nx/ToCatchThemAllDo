@@ -45,7 +45,6 @@ function InputForm({onSubmit, style, placeHolder, startValue}) {
                             setError(state);
                             if(errorMessage !== undefined) {
                                 setErrorMessage(errorMessage)
-                                console.log("click");
                             }
                         }
                     )
